@@ -1,11 +1,11 @@
 Feature: CRUD authors
 
-  Scenario: Test author list
+  Scenario: List all authors page
     When loading the home page "http://localhost:4200/author/list"
     Then the title is "List of authors"
     Then the main button is "Create"
 
-  Scenario: Create an author
+  Scenario: Create an author page
     When loading the home page "http://localhost:4200/author/list"
     And click on button "Create"
     Then the title is "Create author"
@@ -17,7 +17,7 @@ Feature: CRUD authors
     Then the title is "List of authors"
     Then author should be on the list
 
-  Scenario: Read author details
+  Scenario: Read author details page
     When loading the home page "http://localhost:4200/author/list"
     And author information:
           | authorName  | email                 | birthDate  |
@@ -30,7 +30,7 @@ Feature: CRUD authors
     Then the title is "Detail of an author"
     Then author should be on form
 
-  Scenario: Update author details
+  Scenario: Update author details page
     When loading the home page "http://localhost:4200/author/list"
     And author information:
           | authorName  | email                 | birthDate  |
@@ -46,7 +46,7 @@ Feature: CRUD authors
     And click on button "Submit"
     Then author should be on the list
 
-  Scenario: Delete author
+  Scenario: Delete author page
     When loading the home page "http://localhost:4200/author/list"
     And author information:
       | authorName  | email                 | birthDate  |
